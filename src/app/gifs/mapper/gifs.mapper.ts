@@ -1,10 +1,8 @@
-import { GiphyItem } from '../interfaces/giphy.interfaces';
 import { Gif } from '../models/gif.model';
+import { GiphyItem } from '../models/giphy-response.model';
 
-export const mapGiphyItemToGif = (item: GiphyItem): Gif => {
-  return {
-    id: item.id,
-    title: item.title,
-    url: item.images.original.url,
-  };
-};
+export const mapGiphyItemToGif = (item: GiphyItem): Gif => ({
+  id: item.id,
+  title: item.title,
+  url: item.images.fixed_width.url,
+});

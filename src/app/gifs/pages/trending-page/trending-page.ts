@@ -1,17 +1,19 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { GifsList } from '../../components/gifs-list/gifs-list';
 import { GifService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-trending-page',
   standalone: true,
-  imports: [GifsList],
-  templateUrl: './trending-page.html',
+  imports: [CommonModule, GifsList],
+  template: `
+    <h1>Trending</h1>
+    <app-gifs-list [gifs]="gifService.trendingGifs()" />
+  `,
 })
-export default class TrendingPage {
-  gifService = inject(GifService);
-
-  constructor() {
+export class TrendingPageComponent {
+  constructor(public gifService: GifService) {
     this.gifService.loadTrendingGifs();
   }
 }

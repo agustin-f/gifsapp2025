@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { GifService } from '../../services/gifs.service';
+import { GifsList } from '../../components/gifs-list/gifs-list';
+import { Gif } from '../../models/gif.model';
 
 @Component({
   selector: 'app-search-page',
-  imports: [],
+  standalone: true,
+  imports: [GifsList],
   templateUrl: './search-page.html',
-  styleUrl: './search-page.css',
 })
 export default class SearchPage {
+  gifService = inject(GifService);
 
+  onSearch(query: string) {
+    this.gifService.searchGifs(query);
+  }
 }

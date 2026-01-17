@@ -7,7 +7,10 @@ export const routes: Routes = [
     children: [
       {
         path: 'trending',
-        loadComponent: () => import('../app/gifs/pages/trending-page/trending-page'),
+        loadComponent: () =>
+          import('../app/gifs/pages/trending-page/trending-page').then(
+            (m) => m.TrendingPageComponent,
+          ),
       },
       {
         path: 'search',
