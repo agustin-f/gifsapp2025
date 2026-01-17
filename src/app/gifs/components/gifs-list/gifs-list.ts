@@ -1,13 +1,15 @@
 import { Component, input } from '@angular/core';
 import { GifsListItem } from '../gifs-list-item/gifs-list-item';
-import { NgClass } from '../../../../../node_modules/@angular/common/types/_common_module-chunk';
+import { Gif } from '../../models/gif.model';
 
 @Component({
   selector: 'app-gifs-list',
-  imports: [GifsListItem],
+  standalone: true,
+  imports: [
+    GifsListItem, // 👈 solo esto
+  ],
   templateUrl: './gifs-list.html',
-  styleUrl: './gifs-list.css',
 })
 export class GifsList {
-  gifs = input.required<string[]>();
+  gifs = input.required<Gif[]>();
 }
