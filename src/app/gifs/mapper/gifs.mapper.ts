@@ -1,8 +1,16 @@
-import { Gif } from '../models/gif.model';
-import { GiphyItem } from '../models/giphy-response.model';
+import { Gif } from "../interfaces/gif.interfaces";
+import { GiphyItem } from "../models/giphy-response.model";
 
-export const mapGiphyItemToGif = (item: GiphyItem): Gif => ({
-  id: item.id,
-  title: item.title,
-  url: item.images.fixed_width.url,
-});
+export class GifMapper {
+  static mapGiphyItemToGif(item: GiphyItem): Gif {
+    return {
+      id: item.id,
+      title: item.title,
+      url: item.images.original.url,
+    };
+  }
+
+  static mapGiphyItemsToGifArray(items: GiphyItem[]): Gif[] {
+    return items.map(this.mapGiphyItemToGif);
+  }
+}

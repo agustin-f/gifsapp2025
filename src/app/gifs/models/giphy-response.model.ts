@@ -16,6 +16,7 @@ export interface GiphyItem {
   id: string;
   title: string;
   images: {
+    original: any;
     fixed_width: {
       url: string;
     };
