@@ -5,7 +5,6 @@ import { GifService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-trending-page',
-  standalone: true,
   imports: [CommonModule, GifsList],
   template: `
     <h1>Trending</h1>
