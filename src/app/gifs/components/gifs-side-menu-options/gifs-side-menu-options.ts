@@ -1,34 +1,42 @@
+<<<<<<< HEAD
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { GifService } from 'src/app/gifs/services/gifs.service';
+=======
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from "@angular/router";
+>>>>>>> 357f0c9034110b598c94dd44129ae6203af5b0d7
 
-interface MenuOption {
-  icon: string;
-  label: string;
-  route: string;
-  subLabel: string;
+
+interface menuOptions{
+  label:string,
+  sublabel:string,
+  route:string,
+  icon:string
 }
 
 @Component({
-  selector: 'gifs-side-menu-options',
+  selector: 'app-gifs-side-menu-options',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: '../gifs-side-menu-options/gifs-side-menu-options.html',
+  templateUrl: './gifs-side-menu-options.html',
+  styleUrl: './gifs-side-menu-options.css',
 })
-export class SideMenuOptionsComponent {
-  gifService = inject(GifService);
+export class GifsSideMenuOptions {
 
-  menuOptions: MenuOption[] = [
+   menuOptions:menuOptions[] = [
     {
       icon: 'fa-solid fa-chart-line',
       label: 'Trending',
-      subLabel: 'Gifs Populares',
-      route: '/dashboard/trending',
+      sublabel: 'Gifs populares',
+      route: 'trending'
     },
-    {
+      {
       icon: 'fa-solid fa-magnifying-glass',
       label: 'Buscador',
-      subLabel: 'Buscar gifs',
-      route: '/dashboard/search',
-    },
-  ];
+      sublabel: 'Buscar Gifs',
+      route: 'search'
+    }
+   ]
+item: any;
+
 }
