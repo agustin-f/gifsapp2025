@@ -1,22 +1,25 @@
 import { Routes } from '@angular/router';
+import DashboardPage from './gifs/pages/dashboard-page/dashboard-page';
+import { TrendingPageComponent } from './gifs/pages/trending-page/trending-page';
+import SearchPageComponent from './gifs/pages/search-page/search-page';
+import { GifHistory } from './gifs/pages/gif-history/gif-history';
 
 export const routes: Routes = [
   {
     path: 'dashboard',
-    loadComponent: () => import('./gifs/pages/dashboard-page/dashboard-page'),
+    component: DashboardPage,
 
     children: [
       {
-        path: 'trending',
-        loadComponent: () => import('./gifs/pages/trending-page/trending-page'),
+        path: 'trending', component: TrendingPageComponent
       },
       {
         path: 'search',
-        loadComponent: () => import('./gifs/pages/search-page/search-page'),
+        component: SearchPageComponent,
       },
       {
         path: 'history/:query',
-        loadComponent: () => import('./gifs/pages/gif-history/gif-history.component'),
+        component: GifHistory,
       },
       {
         path: '**',

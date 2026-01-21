@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { GifService } from 'src/app/gifs/services/gifs.service';
-=======
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from "@angular/router";
->>>>>>> 357f0c9034110b598c94dd44129ae6203af5b0d7
+import { RouterLink } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
+
 
 
 interface menuOptions{
@@ -38,5 +34,6 @@ export class GifsSideMenuOptions {
     }
    ]
 item: any;
+gifService: any;
 
 }
