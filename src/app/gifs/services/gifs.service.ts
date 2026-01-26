@@ -16,7 +16,7 @@ const loadFromLocalStorage = () => {
   return gifs;
 };
 
-// {
+
 //   'goku': [gif1,gif2,gif3],
 //   'saitama': [gif1,gif2,gif3],
 //   'dragon ball': [gif1,gif2,gif3],
