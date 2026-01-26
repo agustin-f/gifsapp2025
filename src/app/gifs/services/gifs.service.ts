@@ -4,8 +4,8 @@ import { map, Observable, tap } from 'rxjs';
 
 import { environment } from '@environments/environment';
 import { Gif } from '../models/gif.model';
-import type { GiphyResponse } from '../models/giphy-response.model';
-import { GifMapper } from '../mapper/gifs.mapper'
+import type { GiphyResponse } from '../interfaces/giphy.interfaces';
+import { GifMapper } from '../mapper/gifs.mapper';
 
 const GIF_KEY = 'gifs';
 
@@ -26,9 +26,6 @@ const loadFromLocalStorage = () => {
 
 @Injectable({ providedIn: 'root' })
 export class GifService {
-searchResults(): Gif[] {
-throw new Error('Method not implemented.');
-}
   private http = inject(HttpClient);
 
   trendingGifs = signal<Gif[]>([]);
